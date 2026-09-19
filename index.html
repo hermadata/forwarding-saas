@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forwarding SaaS - Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans">
+
+    <!-- Sidebar & Main Layout -->
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-900 text-white flex flex-col">
+            <div class="p-5 text-xl font-bold border-b border-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-ship text-blue-400"></i>
+                <span>LogiForward</span>
+            </div>
+            <nav class="flex-1 p-4 space-y-2">
+                <a href="#" class="flex items-center space-x-3 bg-blue-600 text-white p-3 rounded-lg font-medium">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-slate-400 hover:bg-slate-800 hover:text-white p-3 rounded-lg font-medium">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                    <span>Job Orders</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-slate-400 hover:bg-slate-800 hover:text-white p-3 rounded-lg font-medium">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span>Invoices</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-slate-400 hover:bg-slate-800 hover:text-white p-3 rounded-lg font-medium">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clients</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-slate-800 text-xs text-slate-500">
+                Logged in as Admin
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto p-8">
+            
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h1 class="text-2xl font-bold">Dashboard Operational</h1>
+                    <p class="text-slate-500 text-sm">Ringkasan status pengiriman & operasional logistik.</p>
+                </div>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium shadow flex items-center space-x-2">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Buat Job Order</span>
+                </button>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-500 text-xs font-semibold uppercase">Total Active Shipments</p>
+                    <h3 class="text-3xl font-bold mt-2">12</h3>
+                    <span class="text-xs text-emerald-600 font-medium">↑ 2 baru minggu ini</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-500 text-xs font-semibold uppercase">Customs Clearance</p>
+                    <h3 class="text-3xl font-bold mt-2">4</h3>
+                    <span class="text-xs text-amber-600 font-medium">Proses PEB / PIB</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-500 text-xs font-semibold uppercase">On Board / Sailing</p>
+                    <h3 class="text-3xl font-bold mt-2">6</h3>
+                    <span class="text-xs text-blue-600 font-medium">Dalam Perjalanan</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-500 text-xs font-semibold uppercase">Completed (Month)</p>
+                    <h3 class="text-3xl font-bold mt-2">28</h3>
+                    <span class="text-xs text-slate-500 font-medium">Selesai terkirim</span>
+                </div>
+            </div>
+
+            <!-- Table Active Job Orders -->
+            <div class="bg-white rounded-xl border border-slate-200 shadow-sm">
+                <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                    <h2 class="text-lg font-bold">Active Job Orders (Daftar Pengiriman)</h2>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Realtime Monitoring</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-600">
+                        <thead class="bg-slate-50 text-slate-400 font-semibold uppercase text-xs">
+                            <tr>
+                                <th class="p-4">No. Job Order</th>
+                                <th class="p-4">Tipe</th>
+                                <th class="p-4">Shipper / Consignee</th>
+                                <th class="p-4">Rute (Port)</th>
+                                <th class="p-4">Status</th>
+                                <th class="p-4">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="p-4 font-bold text-slate-800">JO-202609-001</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">EXPORT SEA</span></td>
+                                <td class="p-4">PT Mitra Kopi Indonesia / Global Trading Co.</td>
+                                <td class="p-4">Tanjung Priok $\rightarrow$ Shanghai</td>
+                                <td class="p-4"><span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-semibold">PEB Approved</span></td>
+                                <td class="p-4"><a href="#" class="text-blue-600 font-medium hover:underline">Detail</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-slate-800">JO-202609-002</td>
+                                <td class="p-4"><span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-semibold">IMPORT AIR</span></td>
+                                <td class="p-4">Tech Parts Ltd / PT Elektronik Jaya</td>
+                                <td class="p-4">Shenzhen $\rightarrow$ Soekarno-Hatta</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">On Board</span></td>
+                                <td class="p-4"><a href="#" class="text-blue-600 font-medium hover:underline">Detail</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
